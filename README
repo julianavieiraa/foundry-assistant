@@ -4,7 +4,7 @@ Chatbot integrado ao Azure AI Foundry utilizando o modelo GPT-4.1-mini.
 
 ---
 
-#  Sobre o Projeto
+# 📌 Sobre o Projeto
 
 Este projeto foi desenvolvido utilizando:
 
@@ -17,7 +17,7 @@ O objetivo é criar um chatbot funcional conectado a um agente do Azure AI Found
 
 ---
 
-#  Arquitetura
+# 🏗️ Arquitetura
 
 ```txt id="0i86ts"
 Usuário
@@ -33,7 +33,7 @@ O Cloudflare Worker atua como proxy para esconder a API Key do Azure.
 
 ---
 
-#  Tecnologias Utilizadas
+# 🚀 Tecnologias Utilizadas
 
 * HTML5
 * CSS3
@@ -44,7 +44,7 @@ O Cloudflare Worker atua como proxy para esconder a API Key do Azure.
 
 ---
 
-#  Segurança
+# 🔐 Segurança
 
 A chave da API não fica exposta no frontend.
 
@@ -52,4 +52,32 @@ Ela foi armazenada no Cloudflare Workers utilizando Variables and Secrets.
 
 ---
 
-# 📂
+# 📂 Estrutura do Projeto
+
+```txt id="g8v5mx"
+/
+├── index.html
+└── README.md
+```
+
+---
+
+# 🌐 Deploy
+
+Projeto hospedado utilizando GitHub Pages.
+
+---
+
+# ⚙️ Funcionalidades
+
+* Integração com Azure AI Foundry
+* Interface moderna e responsiva
+* Comunicação com IA em tempo real
+* Proxy seguro utilizando Cloudflare Worker
+* API Key protegida
+
+---
+
+# 👩‍💻 Desenvolvido por
+
+Juliana Vieira
