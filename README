@@ -1,10 +1,10 @@
 # 🤖 AI Foundry Chat
 
-Chatbot integrado ao Azure AI Foundry utilizando o modelo GPT-4.1-mini.
+### Chatbot integrado ao Azure AI Foundry utilizando GPT-4.1-mini
 
 ---
 
-# 📌 Sobre o Projeto
+## 📌 Sobre o Projeto
 
 Este projeto foi desenvolvido utilizando:
 
@@ -13,13 +13,13 @@ Este projeto foi desenvolvido utilizando:
 * GitHub Pages
 * HTML, CSS e JavaScript
 
-O objetivo é criar um chatbot funcional conectado a um agente do Azure AI Foundry, mantendo a API Key protegida através de um proxy no Cloudflare Worker.
+O objetivo do projeto é criar um chatbot funcional conectado ao Azure AI Foundry, mantendo a API Key protegida através de um proxy utilizando Cloudflare Workers.
 
 ---
 
-# 🏗️ Arquitetura
+## 🏗️ Arquitetura do Projeto
 
-```txt id="0i86ts"
+```text
 Usuário
    ↓
 GitHub Pages
@@ -29,11 +29,11 @@ Cloudflare Worker
 Azure AI Foundry
 ```
 
-O Cloudflare Worker atua como proxy para esconder a API Key do Azure.
+O Cloudflare Worker atua como proxy para proteger a chave da API.
 
 ---
 
-# 🚀 Tecnologias Utilizadas
+## 🚀 Tecnologias Utilizadas
 
 * HTML5
 * CSS3
@@ -44,17 +44,21 @@ O Cloudflare Worker atua como proxy para esconder a API Key do Azure.
 
 ---
 
-# 🔐 Segurança
+## 🔐 Segurança
 
-A chave da API não fica exposta no frontend.
+A API Key não fica exposta no frontend.
 
-Ela foi armazenada no Cloudflare Workers utilizando Variables and Secrets.
+Ela foi armazenada utilizando:
+
+```text
+Cloudflare Workers → Variables and Secrets
+```
 
 ---
 
-# 📂 Estrutura do Projeto
+## 📂 Estrutura do Projeto
 
-```txt id="g8v5mx"
+```text
 /
 ├── index.html
 └── README.md
@@ -62,22 +66,22 @@ Ela foi armazenada no Cloudflare Workers utilizando Variables and Secrets.
 
 ---
 
-# 🌐 Deploy
+## ⚙️ Funcionalidades
+
+✔️ Integração com Azure AI Foundry
+✔️ Comunicação com IA em tempo real
+✔️ Interface moderna e responsiva
+✔️ Proxy seguro com Cloudflare Worker
+✔️ API Key protegida
+
+---
+
+## 🌐 Deploy
 
 Projeto hospedado utilizando GitHub Pages.
 
 ---
 
-# ⚙️ Funcionalidades
-
-* Integração com Azure AI Foundry
-* Interface moderna e responsiva
-* Comunicação com IA em tempo real
-* Proxy seguro utilizando Cloudflare Worker
-* API Key protegida
-
----
-
-# 👩‍💻 Desenvolvido por
+## 👩‍💻 Desenvolvido por
 
 Juliana Vieira
