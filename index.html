@@ -2,105 +2,487 @@
 <html lang="pt-BR">
 
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>AI Foundry Chat</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;800&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+
   <style>
-    body {
+    :root {
+      --bg: #070b16;
+      --surface: #101522;
+      --surface2: #151b2b;
+      --border: #2b3247;
+      --accent: #6d7cff;
+      --accent2: #a78bfa;
+      --text: #eef2ff;
+      --text-muted: #7d86a9;
+      --user-bg: #232b55;
+      --bot-bg: #171c2c;
+      --font-head: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    * {
       margin: 0;
       padding: 0;
-      background: #0f172a;
-      font-family: Arial, Helvetica, sans-serif;
-      color: white;
+      box-sizing: border-box;
+    }
+
+    body {
+
+      background:
+        radial-gradient(circle at top left, rgba(109, 124, 255, .18), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(167, 139, 250, .15), transparent 35%),
+        #050816;
+
+      color: var(--text);
+
+      font-family: var(--font-body);
+
       height: 100vh;
+
       display: flex;
       justify-content: center;
       align-items: center;
+
+      padding: 20px;
+
+      overflow: hidden;
     }
 
     .container {
-      width: 90%;
-      max-width: 800px;
-      height: 90vh;
-      background: #111827;
-      border-radius: 20px;
+
+      width: 92%;
+      max-width: 1400px;
+
+      height: 94vh;
+
+      margin: auto;
+
+      background: rgba(7, 11, 22, .92);
+
+      border: 1px solid var(--border);
+
+      border-radius: 28px;
+
       display: flex;
       flex-direction: column;
+
       overflow: hidden;
-      border: 1px solid #374151;
+
+      backdrop-filter: blur(14px);
+
+      box-shadow: 0 0 40px rgba(0, 0, 0, .35);
+
     }
 
     header {
-      padding: 20px;
-      background: #1f2937;
-      border-bottom: 1px solid #374151;
+
+      padding: 18px 26px;
+
+      border-bottom: 1px solid var(--border);
+
+      background: rgba(5, 8, 22, .95);
     }
 
-    header h1 {
-      margin: 0;
+    .topbar {
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-area {
+
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo {
+
+      width: 48px;
+      height: 48px;
+
+      border-radius: 50%;
+
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 24px;
+
+      box-shadow: 0 0 20px rgba(109, 124, 255, .35);
+    }
+
+    .title-area {
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title-area h1 {
+
+      font-family: var(--font-head);
+
+      font-size: 28px;
+      font-weight: 800;
+
+      background: linear-gradient(90deg, #ffffff, #c4b5fd);
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+
+      font-size: 14px;
+
+      color: var(--text-muted);
+
+      margin-top: 2px;
+    }
+
+    .status {
+
+      width: 10px;
+      height: 10px;
+
+      border-radius: 50%;
+
+      background: #22c55e;
+
+      box-shadow: 0 0 12px #22c55e;
+    }
+
+    .actions {
+
+      display: flex;
+      gap: 12px;
+    }
+
+    .icon-btn {
+
+      width: 42px;
+      height: 42px;
+
+      border-radius: 12px;
+
+      border: 1px solid var(--border);
+
+      background: var(--surface2);
+
+      color: white;
+
+      cursor: pointer;
+
+      font-size: 18px;
+
+      transition: .2s;
+    }
+
+    .icon-btn:hover {
+
+      transform: translateY(-2px);
+
+      border-color: var(--accent);
+    }
+
+    #welcome {
+
+      flex: 1;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+
+      gap: 22px;
+
+      padding: 40px;
+    }
+
+    .welcome-logo {
+
+      width: 86px;
+      height: 86px;
+
+      border-radius: 50%;
+
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 42px;
+
+      box-shadow: 0 0 40px rgba(109, 124, 255, .35);
+    }
+
+    #welcome h2 {
+
+      font-size: 58px;
+
+      font-family: var(--font-head);
+
+      font-weight: 800;
+
+      background: linear-gradient(90deg, #ffffff, #c4b5fd);
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    #welcome p {
+
+      max-width: 650px;
+
+      line-height: 1.8;
+
       font-size: 22px;
+
+      color: var(--text-muted);
+    }
+
+    .chips {
+
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+
+      margin-top: 12px;
+    }
+
+    .chip {
+
+      padding: 12px 20px;
+
+      border-radius: 999px;
+
+      border: 1px solid var(--border);
+
+      background: #161b2a;
+
+      color: var(--text);
+
+      cursor: pointer;
+
+      font-size: 15px;
+
+      transition: .2s;
+    }
+
+    .chip:hover {
+
+      transform: translateY(-2px);
+
+      border-color: var(--accent);
     }
 
     #chat {
+
       flex: 1;
+
       overflow-y: auto;
-      padding: 20px;
-      display: flex;
+
+      padding: 26px;
+
+      display: none;
       flex-direction: column;
-      gap: 15px;
+
+      gap: 18px;
+
+      scroll-behavior: smooth;
+    }
+
+    #chat::-webkit-scrollbar {
+
+      width: 6px;
+    }
+
+    #chat::-webkit-scrollbar-thumb {
+
+      background: var(--border);
+
+      border-radius: 10px;
     }
 
     .message {
-      max-width: 80%;
-      padding: 12px 16px;
-      border-radius: 15px;
-      line-height: 1.5;
+
+      max-width: 70%;
+
+      padding: 14px 18px;
+
+      border-radius: 18px;
+
+      line-height: 1.7;
+
+      font-size: 16px;
+
+      animation: fadeIn .25s ease;
+    }
+
+    @keyframes fadeIn {
+
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .user {
+
       align-self: flex-end;
-      background: #2563eb;
+
+      background: var(--user-bg);
+
+      border: 1px solid rgba(109, 124, 255, .35);
+
+      border-bottom-right-radius: 5px;
     }
 
     .bot {
+
       align-self: flex-start;
-      background: #1e293b;
+
+      background: var(--bot-bg);
+
+      border: 1px solid var(--border);
+
+      border-bottom-left-radius: 5px;
     }
 
     footer {
-      padding: 20px;
-      border-top: 1px solid #374151;
+
+      padding: 18px 24px;
+
+      border-top: 1px solid var(--border);
+
+      background: rgba(7, 11, 22, .95);
+    }
+
+    .input-area {
+
       display: flex;
-      gap: 10px;
+      gap: 14px;
     }
 
     input {
+
       flex: 1;
-      padding: 14px;
-      border: none;
-      border-radius: 10px;
+
+      padding: 18px;
+
+      border-radius: 18px;
+
+      border: 1px solid var(--border);
+
+      background: #0f1423;
+
+      color: var(--text);
+
       outline: none;
-      background: #1e293b;
-      color: white;
-      font-size: 15px;
+
+      font-size: 16px;
+
+      transition: .2s;
     }
 
-    button {
-      padding: 14px 20px;
+    input:focus {
+
+      border-color: var(--accent);
+
+      box-shadow: 0 0 0 4px rgba(109, 124, 255, .15);
+    }
+
+    input::placeholder {
+
+      color: var(--text-muted);
+    }
+
+    .send-btn {
+
+      width: 60px;
+      min-width: 60px;
+
       border: none;
-      border-radius: 10px;
-      background: #2563eb;
+
+      border-radius: 18px;
+
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+
       color: white;
+
+      font-size: 22px;
+
       cursor: pointer;
-      font-size: 15px;
+
+      transition: .2s;
     }
 
-    button:hover {
-      background: #3b82f6;
+    .send-btn:hover {
+
+      transform: translateY(-2px);
+
+      box-shadow: 0 10px 24px rgba(109, 124, 255, .28);
+    }
+
+    .footer-text {
+
+      display: block;
+
+      text-align: center;
+
+      margin-top: 12px;
+
+      color: var(--text-muted);
+
+      font-size: 13px;
+    }
+
+    @media(max-width:768px) {
+
+      #welcome h2 {
+        font-size: 36px;
+      }
+
+      #welcome p {
+        font-size: 17px;
+      }
+
+      .message {
+        max-width: 90%;
+      }
+
+      .chips {
+        gap: 10px;
+      }
+
+      .chip {
+        font-size: 13px;
+      }
+
     }
   </style>
+
 </head>
 
 <body>
@@ -108,18 +490,98 @@
   <div class="container">
 
     <header>
-      <h1>🤖 AI Foundry Chat</h1>
+
+      <div class="topbar">
+
+        <div class="logo-area">
+
+          <div class="logo">
+            🤖
+          </div>
+
+          <div class="title-area">
+
+            <h1>AI Foundry Chat</h1>
+
+            <span class="subtitle">
+              gpt-4.1-mini
+            </span>
+
+          </div>
+
+          <div class="status"></div>
+
+        </div>
+
+        <div class="actions">
+
+          <button class="icon-btn">
+            🗑️
+          </button>
+
+          <button class="icon-btn">
+            ⚙️
+          </button>
+
+        </div>
+
+      </div>
+
     </header>
+
+    <div id="welcome">
+
+      <div class="welcome-logo">
+        🤖
+      </div>
+
+      <h2>
+        Olá! Sou seu assistente ✨
+      </h2>
+
+      <p>
+        Seu assistente do Azure AI Foundry. Como posso te ajudar hoje?
+      </p>
+
+      <div class="chips">
+
+        <button class="chip" onclick="quickMessage('O que você pode fazer?')">
+          O que você pode fazer?
+        </button>
+
+        <button class="chip" onclick="quickMessage('Me explique sobre IA')">
+          Me explique sobre IA
+        </button>
+
+        <button class="chip" onclick="quickMessage('Quais ferramentas você tem?')">
+          Quais ferramentas você tem?
+        </button>
+
+        <button class="chip" onclick="quickMessage('Como funciona o AI Foundry?')">
+          Como funciona o AI Foundry?
+        </button>
+
+      </div>
+
+    </div>
 
     <div id="chat"></div>
 
     <footer>
 
-      <input type="text" id="message" placeholder="Digite sua mensagem...">
+      <div class="input-area">
 
-      <button onclick="sendMessage()">
-        Enviar
-      </button>
+        <input type="text" id="message" placeholder="Digite sua mensagem...">
+
+        <button onclick="sendMessage()" class="send-btn">
+          ➤
+        </button>
+
+      </div>
+
+      <span class="footer-text">
+        Enter para enviar · Shift+Enter para nova linha
+      </span>
 
     </footer>
 
@@ -133,11 +595,11 @@
 
       const input = document.getElementById("message");
 
-      const chat = document.getElementById("chat");
-
       const text = input.value.trim();
 
       if (!text) return;
+
+      document.getElementById("welcome").style.display = "none";
 
       addMessage(text, "user");
 
@@ -175,6 +637,7 @@
           data.error?.message ||
           data.error ||
           JSON.stringify(data);
+
         if (data.output_text) {
           resposta = data.output_text;
         }
@@ -217,6 +680,8 @@
 
       const chat = document.getElementById("chat");
 
+      chat.style.display = "flex";
+
       const div = document.createElement("div");
 
       div.classList.add("message");
@@ -230,11 +695,23 @@
 
     }
 
+    function quickMessage(text) {
+
+      document.getElementById("message").value = text;
+
+      sendMessage();
+
+    }
+
     document.getElementById("message")
       .addEventListener("keydown", function (e) {
 
-        if (e.key === "Enter") {
+        if (e.key === "Enter" && !e.shiftKey) {
+
+          e.preventDefault();
+
           sendMessage();
+
         }
 
       });
