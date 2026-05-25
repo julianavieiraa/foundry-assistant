@@ -1,40 +1,55 @@
-AI Foundry Chat
+# 🤖 AI Foundry Chat
 
 Chatbot integrado ao Azure AI Foundry utilizando o modelo GPT-4.1-mini.
 
- Sobre o Projeto
+---
+
+#  Sobre o Projeto
 
 Este projeto foi desenvolvido utilizando:
 
-Azure AI Foundry
-Cloudflare Workers
-GitHub Pages
-HTML, CSS e JavaScript
+* Azure AI Foundry
+* Cloudflare Workers
+* GitHub Pages
+* HTML, CSS e JavaScript
 
 O objetivo é criar um chatbot funcional conectado a um agente do Azure AI Foundry, mantendo a API Key protegida através de um proxy no Cloudflare Worker.
 
- Arquitetura
+---
 
-Usuário → GitHub Pages → Cloudflare Worker → Azure AI Foundry
+#  Arquitetura
+
+```txt id="0i86ts"
+Usuário
+   ↓
+GitHub Pages
+   ↓
+Cloudflare Worker
+   ↓
+Azure AI Foundry
+```
 
 O Cloudflare Worker atua como proxy para esconder a API Key do Azure.
 
- Tecnologias Utilizadas
-HTML5
-CSS3
-JavaScript
-Azure AI Foundry
-Cloudflare Workers
-GitHub Pages
+---
+
+#  Tecnologias Utilizadas
+
+* HTML5
+* CSS3
+* JavaScript
+* Azure AI Foundry
+* Cloudflare Workers
+* GitHub Pages
+
+---
+
+#  Segurança
 
 A chave da API não fica exposta no frontend.
 
 Ela foi armazenada no Cloudflare Workers utilizando Variables and Secrets.
 
-📂 Estrutura do Projeto
-/
-├── index.html
-└── README.md
-🌐 Deploy
+---
 
-Projeto hospedado com GitHub Pages.
+# 📂
