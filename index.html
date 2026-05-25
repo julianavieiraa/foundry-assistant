@@ -38,9 +38,9 @@
     body {
 
       background:
-        radial-gradient(circle at top left, rgba(109, 124, 255, .18), transparent 30%),
-        radial-gradient(circle at bottom right, rgba(167, 139, 250, .15), transparent 35%),
-        #050816;
+        radial-gradient(circle at top left, rgba(109, 124, 255, .10), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(167, 139, 250, .08), transparent 30%),
+        #060816;
 
       color: var(--text);
 
@@ -52,46 +52,43 @@
       justify-content: center;
       align-items: center;
 
-      padding: 40px;
+      padding: 28px;
 
       overflow: hidden;
     }
 
     .container {
 
-      width: 88%;
-      max-width: 1250px;
+      width: 82%;
+      max-width: 1100px;
 
-      height: 90vh;
+      height: 88vh;
 
-      margin: auto;
+      background: rgba(10, 14, 28, 0.88);
 
-      background: rgba(7, 11, 22, .92);
+      border: 1px solid rgba(255, 255, 255, 0.05);
 
-      border: 1px solid rgba(255, 255, 255, .08);
-
-      border-radius: 42px;
+      border-radius: 34px;
 
       display: flex;
       flex-direction: column;
 
       overflow: hidden;
 
-      backdrop-filter: blur(18px);
+      backdrop-filter: blur(20px);
 
       box-shadow:
-        0 0 60px rgba(0, 0, 0, .45),
-        0 0 120px rgba(109, 124, 255, .08);
+        0 10px 40px rgba(0, 0, 0, .35);
 
     }
 
     header {
 
-      padding: 24px 34px;
+      padding: 18px 28px;
 
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid rgba(255, 255, 255, .05);
 
-      background: rgba(5, 8, 22, .95);
+      background: rgba(8, 11, 22, .75);
     }
 
     .topbar {
@@ -110,20 +107,12 @@
 
     .logo {
 
-      width: 48px;
-      height: 48px;
+      width: 42px;
+      height: 42px;
 
-      border-radius: 50%;
+      font-size: 20px;
 
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      font-size: 24px;
-
-      box-shadow: 0 0 20px rgba(109, 124, 255, .35);
+      box-shadow: 0 0 16px rgba(109, 124, 255, .25);
     }
 
     .title-area {
@@ -134,15 +123,9 @@
 
     .title-area h1 {
 
-      font-family: var(--font-head);
+      font-size: 22px;
 
-      font-size: 28px;
-      font-weight: 800;
-
-      background: linear-gradient(90deg, #ffffff, #c4b5fd);
-
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-weight: 700;
     }
 
     .subtitle {
@@ -235,27 +218,14 @@
 
     #welcome h2 {
 
-      font-size: 58px;
-
-      font-family: var(--font-head);
-
-      font-weight: 800;
-
-      background: linear-gradient(90deg, #ffffff, #c4b5fd);
-
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-size: 48px;
     }
 
     #welcome p {
 
-      max-width: 650px;
+      font-size: 18px;
 
-      line-height: 1.8;
-
-      font-size: 22px;
-
-      color: var(--text-muted);
+      max-width: 560px;
     }
 
     .chips {
@@ -270,21 +240,13 @@
 
     .chip {
 
-      padding: 12px 20px;
+      padding: 10px 16px;
 
-      border-radius: 999px;
+      font-size: 14px;
 
-      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, .03);
 
-      background: #161b2a;
-
-      color: var(--text);
-
-      cursor: pointer;
-
-      font-size: 15px;
-
-      transition: .2s;
+      border: 1px solid rgba(255, 255, 255, .05);
     }
 
     .chip:hover {
@@ -324,17 +286,11 @@
 
     .message {
 
-      max-width: 70%;
+      font-size: 15px;
 
-      padding: 14px 18px;
+      padding: 12px 16px;
 
-      border-radius: 18px;
-
-      line-height: 1.7;
-
-      font-size: 16px;
-
-      animation: fadeIn .25s ease;
+      border-radius: 16px;
     }
 
     @keyframes fadeIn {
@@ -372,14 +328,14 @@
       border-bottom-left-radius: 5px;
     }
 
-footer {
+    footer {
 
-  padding: 24px 34px;
+      padding: 18px 28px;
 
-  border-top: 1px solid var(--border);
+      border-top: 1px solid rgba(255, 255, 255, .05);
 
-  background: rgba(7, 11, 22, .95);
-}
+      background: rgba(8, 11, 22, .75);
+    }
 
     .input-area {
 
