@@ -1,25 +1,18 @@
-# 🤖 AI Foundry Chat
+# AI Foundry Chat
 
 ### Chatbot integrado ao Azure AI Foundry utilizando GPT-4.1-mini
 
----
+## Sobre o Projeto
 
-## 📌 Sobre o Projeto
+• Projeto desenvolvido utilizando Azure AI Foundry, Cloudflare Workers, GitHub Pages, HTML, CSS e JavaScript.
 
-Este projeto foi desenvolvido utilizando:
+• O objetivo é criar um chatbot funcional conectado ao Azure AI Foundry.
 
-* Azure AI Foundry
-* Cloudflare Workers
-* GitHub Pages
-* HTML, CSS e JavaScript
+• A API Key foi protegida utilizando Cloudflare Workers como proxy.
 
-O objetivo do projeto é criar um chatbot funcional conectado ao Azure AI Foundry, mantendo a API Key protegida através de um proxy utilizando Cloudflare Workers.
+## Arquitetura do Projeto
 
----
-
-## 🏗️ Arquitetura do Projeto
-
-```text
+```text id="7vzw1n"
 Usuário
    ↓
 GitHub Pages
@@ -29,59 +22,58 @@ Cloudflare Worker
 Azure AI Foundry
 ```
 
-O Cloudflare Worker atua como proxy para proteger a chave da API.
+• O Cloudflare Worker atua como intermediário entre o frontend e o Azure AI Foundry.
 
----
+• Isso impede que a API Key fique exposta no navegador.
 
-## 🚀 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
-* HTML5
-* CSS3
-* JavaScript
-* Azure AI Foundry
-* Cloudflare Workers
-* GitHub Pages
+• HTML5
 
----
+• CSS3
 
-## 🔐 Segurança
+• JavaScript
 
-A API Key não fica exposta no frontend.
+• Azure AI Foundry
 
-Ela foi armazenada utilizando:
+• Cloudflare Workers
 
-```text
+• GitHub Pages
+
+## Segurança
+
+• A chave da API não fica exposta no frontend.
+
+• A API Key foi armazenada utilizando:
+
+```text id="0al68z"
 Cloudflare Workers → Variables and Secrets
 ```
 
----
+## Estrutura do Projeto
 
-## 📂 Estrutura do Projeto
-
-```text
+```text id="75l5go"
 /
 ├── index.html
 └── README.md
 ```
 
----
+## Funcionalidades
 
-## ⚙️ Funcionalidades
+• Integração com Azure AI Foundry
 
-✔️ Integração com Azure AI Foundry
-✔️ Comunicação com IA em tempo real
-✔️ Interface moderna e responsiva
-✔️ Proxy seguro com Cloudflare Worker
-✔️ API Key protegida
+• Comunicação com IA em tempo real
 
----
+• Interface responsiva
 
-## 🌐 Deploy
+• Proxy seguro utilizando Cloudflare Worker
 
-Projeto hospedado utilizando GitHub Pages.
+• API Key protegida
 
----
+## Deploy
 
-## 👩‍💻 Desenvolvido por
+• Projeto hospedado utilizando GitHub Pages.
+
+## Desenvolvido por
 
 Juliana Vieira
